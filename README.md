@@ -5,6 +5,7 @@ A personal collection of reusable skills for Codex, using the [Agent Skills form
 | Skill | What it does |
 | --- | --- |
 | [Align](align/SKILL.md) | Agree on the goal and what done means, batch questions early, and ask for approval when the consequences warrant it. |
+| [Boundry Review](boundry-review/SKILL.md) | Review changes to access, credential use, and privileged execution before they go live. |
 
 ## Install Align
 
