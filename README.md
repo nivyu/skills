@@ -4,7 +4,7 @@ A personal collection of reusable skills for Codex, using the [Agent Skills form
 
 | Skill | What it does |
 | --- | --- |
-| [Align](align/SKILL.md) | Agree on the goal and what done means, surface open decisions, and confirm understanding before a Git push. |
+| [Align](align/SKILL.md) | Agree on the goal and what done means, batch questions early, and ask for approval when the consequences warrant it. |
 
 ## Install Align
 
