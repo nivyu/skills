@@ -1,0 +1,36 @@
+name: Validate skills
+
+on: [push, pull_request]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Agent Skills validation
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Install the reference validator
+        run: |
+          python3 -m venv "$RUNNER_TEMP/skill-validator"
+          "$RUNNER_TEMP/skill-validator/bin/python" -m pip install \
+            "skills-ref @ git+https://github.com/agentskills/agentskills.git@83021e2be457a9b6679148719c1f6074f0ad975e#subdirectory=skills-ref"
+
+      - name: Validate every skill
+        shell: bash
+        run: |
+          shopt -s nullglob
+          skill_dirs=(skills/*/)
+          if (( ${#skill_dirs[@]} == 0 )); then
+            echo "No skill directories found under skills/."
+            exit 1
+          fi
+
+          for skill in "${skill_dirs[@]}"; do
+            "$RUNNER_TEMP/skill-validator/bin/skills-ref" validate "$skill"
+          done
