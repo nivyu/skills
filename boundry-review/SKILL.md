@@ -1,11 +1,15 @@
 ---
 name: boundry-review
-description: Review trust boundaries before granting or expanding access, sharing credentials or sensitive data with a new recipient, or enabling a new privileged job or integration. Use when changing who can run or modify privileged code or delegate permissions.
+description: Review trust boundaries before granting or expanding access, sharing credentials or sensitive data with a new recipient, or enabling a new privileged job or integration. Use when changing who can run or modify privileged code or delegate permissions. Also use before directly handling credentials or running a privileged operation with an existing login, token, or service identity. Apply this when the need for credentials emerges during the task.
 ---
 
 # Review trust boundaries
 
 Apply this review as soon as the proposed implementation changes effective access, even if the original task was routine. A material architecture change triggers this review when it changes which people, systems, or code are trusted. Check inherited access before first activating privileged jobs or integrations, including when they use existing roles or credentials. Continue routine work under existing authorization when the identity, scope, destination, and controls already cover the operation.
+
+## Check existing credentials before use
+
+Verify the identity, target environment, intended operation, and authorized scope using configuration or provider metadata. Use the approved credential mechanism and keep secret values out of chat and logs. Proceed under existing authorization when it covers the operation. Recheck if the identity, target, or operation changes. If you can’t verify authorization, pause the affected action. If the action changes a trust boundary, run the full review below.
 
 ## Identify what changes
 
