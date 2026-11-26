@@ -1,6 +1,6 @@
 ---
 name: align
-description: Use at the start of every new task and throughout collaborative work. Confirm the goal, agree on what done looks like, ask for missing facts, surface open judgments and goal mismatches, pause for architecture planning, and verify user understanding and approval before every push.
+description: Use at the start of every new task and throughout collaborative work. Confirm the goal and what done looks like, group necessary questions up front, tell the user when they can step away, surface open judgments and goal mismatches, pause for architecture planning, and verify user understanding and approval before every push.
 ---
 
 # Align
@@ -17,11 +17,17 @@ Before calling the task complete, check the result against those criteria. Say w
 
 ## Surface missing facts and open judgments
 
-Check the context and available sources first. Ask the user for any missing fact that could materially change the result and explain what depends on the answer.
+Check the context and available sources first. As early as possible, combine the goal and completion checks with every question that requires the user's input in one concise message. Include missing facts, choices, and any approvals you can request at that point. Use information the user has already provided and explain what depends on each answer. Flag any approval that requires a plan or completed changes and say when you'll ask for it.
 
 Surface unresolved judgments about intent, priorities, tradeoffs, or commitments. Show the plausible choices and what each would change. When the user delegates a judgment, state what you chose and why.
 
 Put consequential gaps near the top of the response, where the user can see them before reading a polished draft. Continue work that can safely proceed independently. Make provisional assumptions or placeholders visible, and carry unresolved items forward until they’re settled.
+
+## Tell the user when they can step away
+
+As soon as you have the information, decisions, access, and approvals needed to finish, say, “You can step away now. I have what I need to finish.” Briefly say what you’ll complete and verify, then proceed without routine check-ins. If you already have everything at the start, say so then.
+
+If a decision or approval is still needed, say how far you can get independently and when you’ll need the user back. If new information makes their input essential, explain what changed and ask only for what you need to unblock the work.
 
 ## Call out goal drift
 
